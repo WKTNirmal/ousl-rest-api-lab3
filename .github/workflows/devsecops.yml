@@ -55,9 +55,8 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: |
-          docker tag ousl-student-api:${{ github.sha }} $ECR_REGISTRY/ousl-student-api:${{ github.sha }}
-        
-          
+          docker tag ousl-student-api:${{ github.sha }} $ECR_REGISTRY/ousl-student-api:${{ github.sha }}      
+          docker push $ECR_REGISTRY/ousl-student-api:${{ github.sha }}
           
           
           
